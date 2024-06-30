@@ -3,11 +3,11 @@
 
 class Command {
   private:
-    std::function<double(double, double)> func;
+    std::function<double(double, double)> m_func;
   public:
-    Command(std::function<double(double, double)> f) : func(f) {}
+    Command(std::function<double(double, double)> f) : m_func(f) {}
 
-    double Execute(double a, double b = 1) {
-        return func(a, b);
+    double execute(double a, double b = 1) {
+        return m_func(a, b);
     }
 };

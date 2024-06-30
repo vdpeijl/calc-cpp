@@ -26,13 +26,13 @@ int main() {
     multiply
   );
 
-  double addResult = calculator.Add(10, 5);
-  double subtractResult = calculator.Subtract(10, 5);
-  double divideResult = calculator.Divide(10, 3);
-  double multiplyResult = calculator.Multiply(10, 5);
+  double add_result = calculator.add(10, 5);
+  double subtract_result = calculator.sub(10, 5);
+  double divide_result = calculator.div(10, 3);
+  double multiply_result = calculator.mul(10, 5);
 
-  std::cout << addResult << std::endl;
-  std::cout << subtractResult << std::endl;
-  std::cout << divideResult << std::endl;
-  std::cout << multiplyResult << std::endl;
+  std::cout << add_result << std::endl;
+  std::cout << subtract_result << std::endl;
+  std::cout << divide_result << std::endl;
+  std::cout << multiply_result << std::endl;
 }
