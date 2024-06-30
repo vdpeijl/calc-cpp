@@ -1,6 +1,5 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
-#include "calc.hpp"
 #include "cmd.hpp"
 
 Command* add = new Command([](const double a, const double b) {
@@ -18,20 +17,6 @@ Command* divide = new Command([](const double a, const double b) {
 Command* multiply = new Command([](const double a, const double b) {
   return a * b;
 });
-
-TEST_CASE("Calculator methods") {
-  Calculator calculator(
-    add,
-    subtract,
-    divide,
-    multiply
-  );
-
-  CHECK(calculator.add(10, 5) == 15);
-  CHECK(calculator.sub(10, 5) == 5);
-  CHECK(calculator.div(10, 5) == 2);
-  CHECK(calculator.mul(10, 5) == 50);
-}
 
 TEST_CASE("Add command") {
   CHECK(add->execute(10, 5) == 15);

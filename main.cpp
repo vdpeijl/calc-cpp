@@ -1,6 +1,5 @@
 #include <iostream>
 #include "cmd.hpp"
-#include "calc.hpp"
 
 int main() {
   Command* add = new Command([](const double a, const double b) {
@@ -19,17 +18,10 @@ int main() {
     return a * b;
   });
 
-  Calculator calculator(
-    add,
-    subtract,
-    divide,
-    multiply
-  );
-
-  double add_result = calculator.add(10, 5);
-  double subtract_result = calculator.sub(10, 5);
-  double divide_result = calculator.div(10, 3);
-  double multiplyResult = calculator.mul(10, 5);
+  double add_result = add->execute(10, 5);
+  double subtract_result = subtract->execute(10, 5);
+  double divide_result = divide->execute(10, 3);
+  double multiplyResult = multiply->execute(10, 5);
 
   std::cout << add_result << std::endl;
   std::cout << subtract_result << std::endl;
